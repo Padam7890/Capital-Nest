@@ -4,6 +4,7 @@ import banner from "../../Images/Banner/minibanner.png";
 import aboutus from "../../Images/aboutus.png";
 import Image from "next/image";
 import { aboutSections, AboutSection } from "../../data/about";
+import { Button, Paragraph } from "@/shared/ui/components";
 
 const AboutUsPage = () => {
   const [activeSectionId, setActiveSectionId] = useState<string>("vision");
@@ -11,7 +12,7 @@ const AboutUsPage = () => {
   const handleSectionChange = (sectionId: string) => {
     setActiveSectionId(sectionId);
   };
-
+  
   const activeSection: AboutSection | undefined = aboutSections.find(
     (section) => section.id === activeSectionId
   );
@@ -27,15 +28,13 @@ const AboutUsPage = () => {
       >
         <div className="container flex flex-row gap-2 h-12 items-center">
           {aboutSections.map((section) => (
-            <button
+            <Button
               key={section.id}
-              className={`py-2 px-5 sm:py-4 sm:px-10 rounded-sm ${
-                activeSectionId === section.id ? "bg-[#FBD300]" : "bg-white/80"
-              } text-black`}
+              variant={activeSectionId === section.id ? "primary" : "secondary"}
               onClick={() => handleSectionChange(section.id)}
             >
               {section.title}
-            </button>
+            </Button>
           ))}
         </div>
       </div>
@@ -56,7 +55,7 @@ const AboutUsPage = () => {
                   ))}
                 </ul>
               ) : (
-                <p className="text-[#2E2E2E]">{activeSection.content}</p>
+                <Paragraph>{activeSection.content}</Paragraph>
               )}
             </div>
           )}

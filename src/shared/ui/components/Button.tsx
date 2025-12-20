@@ -30,7 +30,7 @@ const Button: React.FC<ButtonProps> = ({
     primary:
       "bg-[#FBD300] text-black hover:bg-[#FBD300]/90 focus:ring-[#FBD300]",
     secondary:
-      "bg-secondary text-white hover:bg-secondary/90 focus:ring-secondary",
+      "bg-white/80 text-black",
     outline:
       "border-2 border-[#FBD300] text-[#FBD300] hover:bg-[#FBD300] hover:text-black focus:ring-[#FBD300]",
     ghost:
