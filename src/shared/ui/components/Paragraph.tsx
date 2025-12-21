@@ -2,7 +2,7 @@ import React, { HTMLAttributes } from "react";
 import { cn } from "../../utils/cn";
 
 export interface ParagraphProps extends HTMLAttributes<HTMLParagraphElement> {
-  size?: "xs" | "sm" | "md" | "lg" | "xl";
+  size?: "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl";
   weight?: "normal" | "medium" | "semibold" | "bold";
   color?: "default" | "muted" | "primary" | "secondary" | "danger";
   align?: "left" | "center" | "right" | "justify";
@@ -24,6 +24,8 @@ const Paragraph: React.FC<ParagraphProps> = ({
     md: "text-base",
     lg: "text-lg",
     xl: "text-xl",
+    "2xl": "text-2xl",
+    "3xl": "text-3xl",
   };
 
   const weightStyles = {
