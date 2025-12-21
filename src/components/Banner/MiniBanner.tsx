@@ -1,7 +1,17 @@
 import React from "react";
 import banner from "../../Images/Banner/minibanner.png";
 import { ArrowRight, Dice1 } from "lucide-react";
-const MiniBanner = ({ titlepara }: { titlepara: boolean }) => {
+
+interface MiniBannerProps {
+  titlepara: boolean;
+  content?: {
+    title: string;
+    description: string;
+    ctaText: string;
+    ctaLink: string;
+  };
+}
+const MiniBanner = ({ titlepara, content }: MiniBannerProps) => {
   return (
     <div
       className="flex text-white p-6 rounded-md mt-5 mb-9"
